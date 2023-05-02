@@ -1,3 +1,11 @@
-## Laravel API / NextJS CRUD
+## Laravel
 
-This is a simple app that uses NextJS as a frontend to View and Update Users and Laravel as the API
+This app uses [Laravel version 9](https://laravel.com/docs/9.x).
+
+Installation Instructions
+- `composer install`
+- copy .env.example to .env
+- `php artisan key:generate`
+- edit .env and update database config
+- `php artisan migrate:fresh --seed`
+- `php artisan serve`

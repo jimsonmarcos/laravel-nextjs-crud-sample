@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const Home: NextPage = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -17,6 +18,13 @@ const Home: NextPage = () => {
       .get<User[]>(`${process.env.NEXT_PUBLIC_API_URL}/users`)
       .then(({ data }: { data: User[] }) => {
         setUsers(data);
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to fetch users.",
+          confirmButtonText: "Confirm",
+        });
       });
   }, []);
 
