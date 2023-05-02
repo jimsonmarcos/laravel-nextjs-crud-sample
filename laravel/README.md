@@ -7,5 +7,6 @@ Installation Instructions
 - copy .env.example to .env
 - `php artisan key:generate`
 - edit .env and update database config
+- `php artisan config:clear`
 - `php artisan migrate:fresh --seed`
 - `php artisan serve`
